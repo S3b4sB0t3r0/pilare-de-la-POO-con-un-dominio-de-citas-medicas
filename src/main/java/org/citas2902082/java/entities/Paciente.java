@@ -1,43 +1,33 @@
 package org.citas2902082.java.entities;
 
-import java.time.LocalDate;
-import org.citas2902082.java.entities.enums.TipoIdentificacion;
-import org.citas2902082.java.entities.enums.TipoSangre;
+import java.time.*;
+import org.citas2902082.java.entities.enums.*;
 
+public class Paciente extends Usuario {
 
-
-public class Paciente {
-
-    public Integer id;
-    public String nombre;
-    public String apeliido;
-    public TipoIdentificacion tipoIdentificacion;
-    public Integer numeroIdentificacion;
-    public String correoElectronico;
-    public Integer celular;
-    public LocalDate fechaNacimiento;
-    public Double altura;
-    public Double peso;
-    public TipoSangre tipoSangre;
-    public char factorRH;
-
-    //constructores
-    public Paciente(String nombre, String apeliido, TipoIdentificacion tipoIdentificacion, Integer numeroIdentificacion,
-            String correoElectronico, Integer celular, LocalDate fechaNacimiento, Double altura, Double peso,
-            TipoSangre tipoSangre, char factorRH) {
-        this.nombre = nombre;
-        this.apeliido = apeliido;
-        this.tipoIdentificacion = tipoIdentificacion;
-        this.numeroIdentificacion = numeroIdentificacion;
-        this.correoElectronico = correoElectronico;
+    
+    private String email;
+    private Integer celular;
+    private LocalDateTime fechaNacimiento;
+    private Double altura;
+    private Double peso;
+    private Sangre sangre;
+    private char factorRH;
+    
+    public Paciente(Integer id, String nombres, String apellidos, TipoIdentificacion tipoIdentificacion,
+            Long numeroIdentificacion, String email, Integer celular, LocalDateTime fechaNacimiento, Double altura,
+            Double peso, Sangre sangre, char factorRH) {
+        super(id, nombres, apellidos, tipoIdentificacion, numeroIdentificacion);
+        this.email = email;
         this.celular = celular;
         this.fechaNacimiento = fechaNacimiento;
         this.altura = altura;
         this.peso = peso;
-        this.tipoSangre = tipoSangre;
+        this.sangre = sangre;
         this.factorRH = factorRH;
     }
 
-
-
+    // constructor
+    
+    
 }
