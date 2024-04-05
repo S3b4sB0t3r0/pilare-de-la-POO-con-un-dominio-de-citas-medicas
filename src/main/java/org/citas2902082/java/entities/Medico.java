@@ -8,8 +8,13 @@ public class Medico extends Usuario {
     private Especialidad especialidad;
 
     // constructor parametrizado
-    public Medico(Integer id, String nombres, String apellidos, TipoIdentificacion tipoIdentificacion,
-            Long numeroIdentificacion, Long registroMedico, Especialidad especialidad) {
+    public Medico(Integer id, 
+                    String nombres
+                    ,String apellidos,
+                    TipoIdentificacion tipoIdentificacion,
+                    Long numeroIdentificacion,
+                     Long registroMedico, 
+                     Especialidad especialidad) {
 
         // constructor de la clase padre
         super(id, nombres, apellidos, tipoIdentificacion, numeroIdentificacion);
@@ -35,10 +40,14 @@ public class Medico extends Usuario {
 
     @Override
     public String toString() {
-        return 
-        super.toString() +
-        "Medico [registroMedico=" + registroMedico + ", especialidad=" + especialidad + "]";
+        return "Medico [registroMedico=" + registroMedico + ", id=" + id + ", nombres=" + nombres + ", especialidad="
+                + especialidad + ", apellidos=" + apellidos + ", tipoIdentificacion=" + tipoIdentificacion
+                + ", numeroIdentificacion=" + numeroIdentificacion + "]";
     }
+
+
+
+
 
 
     

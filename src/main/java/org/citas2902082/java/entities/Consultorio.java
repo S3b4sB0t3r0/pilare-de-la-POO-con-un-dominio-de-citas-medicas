@@ -1,9 +1,9 @@
 package org.citas2902082.java.entities;
 
 public class Consultorio {
-private Integer id;
-private String direccion;
-private Integer numero;
+public Integer id;
+public String direccion;
+public Integer numero;
 
 //constructor
 public Consultorio(String direccion, Integer numero) {

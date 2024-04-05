@@ -10,13 +10,14 @@ public class CitaEnfermero extends Cita implements IAgendable {
     private String procedimiento;
     private Enfermero enfermero;
 
+// construtor 
 
-
-    public CitaEnfermero(LocalDateTime fecha,
+    public CitaEnfermero(Integer id,
+                         LocalDateTime fecha,
                          Paciente paciente,
                          String procedimiento,
-                          Enfermero enfermero) {
-        super(fecha, paciente);
+                         Enfermero enfermero) {
+        super(id, fecha, paciente);
         this.procedimiento = procedimiento;
         this.enfermero = enfermero;
     }
@@ -45,11 +46,10 @@ public class CitaEnfermero extends Cita implements IAgendable {
         this.enfermero = enfermero;
     }
 
-
+// implementar agendable 
     @Override
     public void agendarCita(LocalDateTime fecha) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'agendarCita'");
+        super.setFecha(fecha);
     }
 
 
@@ -63,7 +63,14 @@ public class CitaEnfermero extends Cita implements IAgendable {
     @Override
     public void reAgendarCita(LocalDateTime fecha) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'reAgendarCita'");
+        super.setFecha(fecha); 
+    }
+
+
+    @Override
+    public String toString() {
+        return "CitaEnfermero [id=" + id + ", fecha=" + fecha + ", paciente=" + paciente + ", procedimiento="
+                + procedimiento + ", consultorio=" + consultorio + ", enfermero=" + enfermero + "]";
     }
 
 

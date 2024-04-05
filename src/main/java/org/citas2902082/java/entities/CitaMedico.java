@@ -1,20 +1,22 @@
 package org.citas2902082.java.entities;
 
-import org.citas2902082.java.entities.*;
-import org.citas2902082.java.entities.enums.*;
+
+import org.citas2902082.java.entities.enums.Estados;
 import java.time.*;
 
 public class CitaMedico extends Cita implements IAgendable {
 
 private String motivo;
 private Medico medico;
-private Estados estados;
+public Estados estados;
 
 
-public CitaMedico(LocalDateTime fecha, Paciente paciente, String motivo, Medico medico) {
-    super(fecha, paciente);
+
+public CitaMedico(Integer id,LocalDateTime fecha, Paciente paciente, String motivo, Medico medico ,Estados estados) {
+    super(id , fecha, paciente);
     this.motivo = motivo;
     this.medico = medico;
+    this.estados = estados;
 }
 
 
@@ -41,6 +43,15 @@ public void setMedico(Medico medico) {
 
 
 
+public Estados getEstados() {
+    return estados;
+}
+
+
+
+public void setEstados(Estados estados) {
+    this.estados = estados;
+}
 
 
 //metodos heredados del padre
@@ -62,6 +73,28 @@ this.estados = Estados.CANCELADA;
 public void reAgendarCita(LocalDateTime fecha) {
     super.setFecha(fecha);
 }
+
+
+
+@Override
+public String toString() {
+    return "CitaMedico [motivo=" + motivo + ", medico=" + medico + ", estados=" + getEstados() + "]";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

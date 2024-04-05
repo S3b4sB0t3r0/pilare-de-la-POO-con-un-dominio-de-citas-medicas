@@ -1,14 +1,16 @@
 package org.citas2902082.java.entities;
  import java.time.*;
-import org.citas2902082.java.entities.Paciente;
+
 
 public class Cita {
-    private LocalDateTime fecha;
-    private Paciente paciente;
+    protected Integer id;
+    protected LocalDateTime fecha;
+    protected Paciente paciente;
+    protected Consultorio consultorio;
 
 
     //constructor
-    public Cita(LocalDateTime fecha, Paciente paciente) {
+    public Cita(Integer id, LocalDateTime fecha, Paciente paciente) {
         this.fecha = fecha;
         this.paciente = paciente;
     }
@@ -17,6 +19,20 @@ public class Cita {
     //getters y setters
     public LocalDateTime getFecha() {
         return fecha;
+    }
+
+    public Cita(Consultorio consultorio) {
+        this.consultorio = consultorio;
+    }
+
+
+    public Consultorio getConsultorio() {
+        return consultorio;
+    }
+
+
+    public void setConsultorio(Consultorio consultorio) {
+        this.consultorio = consultorio;
     }
 
 
@@ -33,6 +49,14 @@ public class Cita {
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
+
+
+    @Override
+    public String toString() {
+        return "Cita [id=" + id + ", fecha=" + fecha + ", paciente=" + paciente + ", consultorio=" + consultorio + "]";
+    }
+
+
 
     
 
